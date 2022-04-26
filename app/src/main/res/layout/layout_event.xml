@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/chooseDate"
+        android:layout_width="117dp"
+        android:layout_height="35dp"
+        android:layout_gravity="center"
+        android:text="25/04"
+        android:textSize="20dp"
+        android:textAlignment="center"
+        >
+    </TextView>
+</LinearLayout>
+
+
+    <EditText
+        android:id="@+id/inputTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:hint="Title">
+
+    </EditText>
+
+
+
+
+    <EditText
+        android:id="@+id/inputStartTime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:hint="StartTime">
+
+    </EditText>
+
+    <EditText
+        android:id="@+id/inputEndTime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="65dp"
+        android:hint="EndTime">
+
+    </EditText>
+
+    <EditText
+        android:id="@+id/inputDesc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="95dp"
+        android:hint="Desc">
+
+    </EditText>
+
+    <EditText
+        android:id="@+id/inputLocation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="125dp"
+        android:hint="Location">
+
+    </EditText>
+</RelativeLayout>
