@@ -10,6 +10,15 @@
             android:supportsRtl="true"
             android:theme="@style/Theme.5046GroupProject">
         <activity
+                android:name=".RegisterActivity"
+                android:exported="false" />
+        <activity
+                android:name=".PopupTest"
+                android:exported="false" />
+        <activity
+                android:name=".LoginPage"
+                android:exported="false" />
+        <activity
                 android:name=".MainActivity"
                 android:exported="true">
             <intent-filter>
@@ -19,5 +28,7 @@
             </intent-filter>
         </activity>
     </application>
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>
