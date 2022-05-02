@@ -26,24 +26,27 @@ public class PopupTest extends AppCompatActivity {
         binding.popupBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                createNewDiaglog();
+                createNewDialogue();
             }
         });
     }
 
-    public void createNewDiaglog() {
+    /**
+     * Create a pup-op dialogue
+     */
+    public void createNewDialogue() {
         dialogBuilder = new AlertDialog.Builder(this);
         popupBinding = PopupBinding.inflate(getLayoutInflater());
         final View contactPopup = getLayoutInflater().inflate(R.layout.popup, null);
 
-        //加入输入项
+        // TODO: add input 
 
         dialogBuilder.setView(contactPopup);
         dialog = dialogBuilder.create();
         dialog.show();
 
         popupBinding.saveBtn.setOnClickListener(view -> {
-            //保存功能
+            // TODO: add save function
         });
 
 

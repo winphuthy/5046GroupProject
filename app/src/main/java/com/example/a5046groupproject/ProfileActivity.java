@@ -29,6 +29,9 @@ public class ProfileActivity extends AppCompatActivity{
         });
     }
 
+    /**
+     * check user whether is logged in
+     */
     private void checkUser(){
         FirebaseUser user = mAuth.getCurrentUser();
         if (user == null) {

@@ -36,6 +36,9 @@ public class RegisterActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * Create a user by login with email
+     */
     private void createUser() {
 
         String email = binding.etRegEmail.getText().toString();

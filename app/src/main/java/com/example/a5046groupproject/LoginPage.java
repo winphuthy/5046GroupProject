@@ -52,6 +52,7 @@ public class LoginPage extends AppCompatActivity{
         mAuth = FirebaseAuth.getInstance();
         checkUser();
 
+        // building a google sign in option used by google sign in
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.default_web_client_id))
                 .requestEmail()
@@ -79,6 +80,9 @@ public class LoginPage extends AppCompatActivity{
 
     }
 
+    /**
+     * check the User where logged in already
+     */
     private void checkUser(){
         FirebaseUser user = mAuth.getCurrentUser();
         if (user != null) {
@@ -88,7 +92,12 @@ public class LoginPage extends AppCompatActivity{
         }
     }
 
-
+    /**
+     * action when receive the result, create the account information class and verify with firebase
+     * @param requestCode
+     * @param resultCode
+     * @param data
+     */
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data){
         super.onActivityResult(requestCode, resultCode, data);
@@ -104,6 +113,10 @@ public class LoginPage extends AppCompatActivity{
         }
     }
 
+    /**
+     * verify with firebase
+     * @param account GoogleSignInAccount class, the account information.
+     */
     private void firebaseAuthWithGoogleAccount(GoogleSignInAccount account){
         Log.d(TAG, "firebaseAuthWithGoogleAccount: go login with google account");
         AuthCredential credential = GoogleAuthProvider.getCredential(account.getIdToken(), null);
@@ -138,6 +151,9 @@ public class LoginPage extends AppCompatActivity{
         });
     }
 
+    /**
+     * Email login with firebase
+     */
     private void userLogin(){
 //        Toast.makeText(LoginPage.this, "login on click ", Toast.LENGTH_SHORT).show();
 
