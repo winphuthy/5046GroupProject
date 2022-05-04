@@ -1,22 +1,21 @@
 package com.example.a5046groupproject;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-
-import java.util.Collections;
-
-public class MainActivity<service> extends AppCompatActivity {
+public class MainButtonActivity<service> extends AppCompatActivity {
     private Button buttonCalendar;
     private Button buttonMap;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_button_main);
 
         buttonCalendar = findViewById(R.id.buttonCalendar);
         buttonMap = findViewById(R.id.buttonMap);
@@ -27,6 +26,7 @@ public class MainActivity<service> extends AppCompatActivity {
             }
         });
         buttonMap.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.N)
             @Override
             public void onClick(View view) {
                 openMap();
@@ -37,6 +37,7 @@ public class MainActivity<service> extends AppCompatActivity {
         Intent intent = new Intent(this,Activity2.class);
         startActivity(intent);
     }
+    @RequiresApi(api = Build.VERSION_CODES.N)
     public void openMap(){
         Intent intent = new Intent(this, MapsActivity.class);
         startActivity(intent);
