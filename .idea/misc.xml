@@ -5,6 +5,8 @@
       <map>
         <entry key="..\:/docker/5046GroupProject/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1175" />
         <entry key="..\:/docker/5046GroupProject/app/src/main/res/layout/activity_2.xml" value="0.358695652173913" />
+        <entry key="..\:/docker/5046GroupProject/app/src/main/res/layout/activity_button_main.xml" value="0.36666666666666664" />
+        <entry key="..\:/docker/5046GroupProject/app/src/main/res/layout/activity_graph.xml" value="0.17831813576494426" />
         <entry key="..\:/docker/5046GroupProject/app/src/main/res/layout/activity_main.xml" value="0.358695652173913" />
         <entry key="..\:/docker/5046GroupProject/app/src/main/res/layout/activity_maps.xml" value="0.358695652173913" />
         <entry key="..\:/docker/5046GroupProject/app/src/main/res/layout/layout_event.xml" value="0.358695652173913" />

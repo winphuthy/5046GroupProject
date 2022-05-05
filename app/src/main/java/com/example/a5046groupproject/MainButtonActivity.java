@@ -12,6 +12,7 @@ import android.widget.Button;
 public class MainButtonActivity<service> extends AppCompatActivity {
     private Button buttonCalendar;
     private Button buttonMap;
+    private Button buttonGraph;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,6 +20,7 @@ public class MainButtonActivity<service> extends AppCompatActivity {
 
         buttonCalendar = findViewById(R.id.buttonCalendar);
         buttonMap = findViewById(R.id.buttonMap);
+        buttonGraph = findViewById(R.id.buttonGraph);
         buttonCalendar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -32,6 +34,12 @@ public class MainButtonActivity<service> extends AppCompatActivity {
                 openMap();
             }
         });
+        buttonGraph.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openGraph();
+            }
+        });
     }
     public void openCalendar(){
         Intent intent = new Intent(this,Activity2.class);
@@ -40,6 +48,10 @@ public class MainButtonActivity<service> extends AppCompatActivity {
     @RequiresApi(api = Build.VERSION_CODES.N)
     public void openMap(){
         Intent intent = new Intent(this, MapsActivity.class);
+        startActivity(intent);
+    }
+    public void openGraph(){
+        Intent intent = new Intent(this, GraphActivity.class);
         startActivity(intent);
     }
     // Show events on user's calendar.

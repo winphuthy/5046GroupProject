@@ -6,4 +6,12 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <Button
+        android:id="@+id/buttonPage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Function"
+        tools:layout_editor_absoluteX="7dp"
+        tools:layout_editor_absoluteY="2dp"
+        tools:ignore="MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>
