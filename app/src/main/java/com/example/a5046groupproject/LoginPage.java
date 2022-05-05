@@ -108,7 +108,8 @@ public class LoginPage extends AppCompatActivity{
                 GoogleSignInAccount account = accountTask.getResult(ApiException.class);
                 firebaseAuthWithGoogleAccount(account);
             } catch (Exception e) {
-                Log.d(TAG, "onActivityResult: " + e.getMessage());
+                e.printStackTrace();
+                Log.e(TAG, "onActivityResult: " + e.getMessage());
             }
         }
     }
