@@ -3,8 +3,18 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Liuchang/AndroidStudioProjects/5046GroupProject/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2265" />
+        <entry key="..\:/Users/Liuchang/AndroidStudioProjects/5046GroupProject/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2265" />
+        <entry key="..\:/Users/Liuchang/AndroidStudioProjects/5046GroupProject/app/src/main/res/drawable/side_nav_bar.xml" value="0.2265" />
+        <entry key="..\:/Users/Liuchang/AndroidStudioProjects/5046GroupProject/app/src/main/res/layout/activity_login_page.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/Liuchang/AndroidStudioProjects/5046GroupProject/app/src/main/res/layout/activity_main.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/Liuchang/AndroidStudioProjects/5046GroupProject/app/src/main/res/layout/activity_profile.xml" value="0.536" />
+        <entry key="..\:/Users/Liuchang/AndroidStudioProjects/5046GroupProject/app/src/main/res/layout/add_fragment.xml" value="0.25364583333333335" />
+        <entry key="..\:/Users/Liuchang/AndroidStudioProjects/5046GroupProject/app/src/main/res/layout/content_main.xml" value="0.25364583333333335" />
+        <entry key="..\:/Users/Liuchang/AndroidStudioProjects/5046GroupProject/app/src/main/res/layout/home_fragment.xml" value="0.25364583333333335" />
+        <entry key="..\:/Users/Liuchang/AndroidStudioProjects/5046GroupProject/app/src/main/res/layout/nav_header_main.xml" value="0.25364583333333335" />
+        <entry key="..\:/Users/Liuchang/AndroidStudioProjects/5046GroupProject/app/src/main/res/layout/view_fragment.xml" value="0.25364583333333335" />
+        <entry key="..\:/Users/Liuchang/AndroidStudioProjects/5046GroupProject/app/src/main/res/menu/navigation_menu.xml" value="0.25364583333333335" />
       </map>
     </option>
   </component>
