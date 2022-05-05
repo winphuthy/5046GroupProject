@@ -12,7 +12,6 @@ import android.os.Bundle;
 import android.view.View;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 public class GraphActivity extends AppCompatActivity {
@@ -37,23 +36,5 @@ public class GraphActivity extends AppCompatActivity {
         binding.barChart.setUsePercentValues(true);
         binding.barChart.setCenterText("Budget Percentage PieChart");
         binding.barChart.invalidate();
-        /*BarDataSet barDataSet = new BarDataSet(barEntries, "Steps");
-        barDataSet.setColors(ColorTemplate.COLORFUL_COLORS);
-        ArrayList<IBarDataSet> dataSets = new ArrayList<>();
-        List<String> xAxisValues = new ArrayList<>(Arrays.asList("Sun", "Mon", "Tues",
-                "Wed", "Thurs", "Fri","Sat"));
-        binding.barChart.getXAxis().setValueFormatter(new
-                com.github.mikephil.charting.formatter.IndexAxisValueFormatter(xAxisValues));
-        BarData barData = new BarData(barDataSet);
-        binding.barChart.setData(barData);
-        barData.setBarWidth(1.0f);
-        binding.barChart.setVisibility(View.VISIBLE);
-        binding.barChart.animateY(4000);
-        //description will be displayed as "Description Label" if not provided
-        Description description = new Description();
-        description.setText("Daily Steps");
-        binding.barChart.setDescription(description);
-        //refresh the chart
-        binding.barChart.invalidate();*/
     }
 }
