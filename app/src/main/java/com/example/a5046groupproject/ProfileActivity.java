@@ -7,6 +7,7 @@ import androidx.work.Constraints;
 import androidx.work.Data;
 import androidx.work.NetworkType;
 import androidx.work.OneTimeWorkRequest;
+import androidx.work.PeriodicWorkRequest;
 import androidx.work.WorkManager;
 
 import android.content.Intent;
@@ -17,6 +18,8 @@ import com.example.a5046groupproject.databinding.ActivityProfileBinding;
 import com.example.a5046groupproject.databinding.PopupBinding;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+
+import java.util.concurrent.TimeUnit;
 
 public class ProfileActivity extends AppCompatActivity{
 
@@ -59,9 +62,13 @@ public class ProfileActivity extends AppCompatActivity{
                 .addTag("download")
                 .build();
         
-        WorkManager.getInstance(this).enqueue(downloadRequest);
-        
-        
+//        WorkManager.getInstance(this).enqueue(downloadRequest);
+
+        PeriodicWorkRequest periodicWorkRequest =
+                new PeriodicWorkRequest.Builder(SyncWorker.class, 1, TimeUnit.HOURS)
+                        .setInputData(data)
+                        .addTag("Periodic")
+                        .build();
     }
 
     /**
