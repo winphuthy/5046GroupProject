@@ -23,12 +23,7 @@ public class PopupTest extends AppCompatActivity {
         View root = binding.getRoot();
         setContentView(root);
 
-        binding.popupBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                createNewDialogue();
-            }
-        });
+        binding.popupBtn.setOnClickListener(view -> createNewDialogue());
     }
 
     /**
