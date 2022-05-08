@@ -9,8 +9,11 @@ import androidx.work.Data;
 import androidx.work.Worker;
 import androidx.work.WorkerParameters;
 
+import com.google.firebase.database.DatabaseReference;
+
 public class SyncWorker extends Worker{
     private static final String TAG = "SyncWorker";
+    DatabaseReference dbReference;
 
     public SyncWorker(@NonNull Context context, @NonNull WorkerParameters workerParams){
         super(context, workerParams);
@@ -21,6 +24,9 @@ public class SyncWorker extends Worker{
     public Result doWork(){
         Data inputData = getInputData();
         int number = inputData.getInt("number", -1);
+        
+        String userid = inputData.getString("userid");
+        
         Log.d(TAG, "doWork: number" + number);        
 
         for (int i = number; i > 0; i--) {
