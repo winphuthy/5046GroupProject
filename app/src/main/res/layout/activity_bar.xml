@@ -4,21 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".GraphActivity">
+    tools:context=".BarActivity">
+
     <Button
-        android:id="@+id/buttonBarGraph"
+        android:id="@+id/buttonPieGraph"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:text="BarGraph" />
-    <com.github.mikephil.charting.charts.PieChart
-        android:layout_height="match_parent"
-        android:layout_width="match_parent"
+        android:text="PieGraph" />
+
+    <com.github.mikephil.charting.charts.BarChart
+        android:id="@+id/barChart"
+        android:layout_width="360dp"
+        android:layout_height="720dp"
         android:layout_margin="10dp"
-        android:id="@+id/barChart" >
-
-
-    </com.github.mikephil.charting.charts.PieChart>
-
+        android:layout_marginBottom="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="7dp"
+        tools:ignore="MissingConstraints" />
 </RelativeLayout>

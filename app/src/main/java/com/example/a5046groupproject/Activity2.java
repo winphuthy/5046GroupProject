@@ -45,7 +45,6 @@ public class Activity2 extends AppCompatActivity implements EventCreate.EventLis
         Calendar eTime = Calendar.getInstance();
         String time = "25/04/2022 10:30";
 
-
         try {
             sTime.setTime(new SimpleDateFormat("dd/MM/yyyy HH:mm").parse(startTime));
         } catch (ParseException e) {

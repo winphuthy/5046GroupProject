@@ -13,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.5046GroupProject">
         <activity
+            android:name=".BarActivity"
+            android:exported="false" />
+        <activity
             android:name=".GraphActivity"
             android:exported="false" />
         <activity
@@ -38,7 +41,7 @@
             android:exported="false" />
         <activity
             android:name=".MainButtonActivity"
-            android:exported="false"></activity>
+            android:exported="false" />
     </application>
 
 </manifest>

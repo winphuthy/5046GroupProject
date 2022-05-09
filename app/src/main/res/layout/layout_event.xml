@@ -19,8 +19,6 @@
         >
     </TextView>
 </LinearLayout>
-
-
     <EditText
         android:id="@+id/inputTitle"
         android:layout_width="match_parent"
@@ -29,9 +27,6 @@
         android:hint="Title">
 
     </EditText>
-
-
-
 
     <EditText
         android:id="@+id/inputStartTime"
@@ -68,4 +63,14 @@
         android:hint="Location">
 
     </EditText>
+    <Button
+        android:id="@+id/buttonTimePicker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        android:layout_marginLeft="150dp"
+        android:text="pick time">
+    </Button>
+
+
 </RelativeLayout>
