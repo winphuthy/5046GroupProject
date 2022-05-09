@@ -37,7 +37,7 @@
             android:exported="false"
             android:label="MapsActivity" />
         <activity
-            android:name=".Activity2"
+            android:name=".ActivityAddEvent"
             android:exported="false" />
         <activity
             android:name=".MainButtonActivity"
