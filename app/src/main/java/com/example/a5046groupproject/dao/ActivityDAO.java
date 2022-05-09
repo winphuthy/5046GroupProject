@@ -1,6 +1,7 @@
 package com.example.a5046groupproject.dao;
 
 import androidx.lifecycle.LiveData;
+import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
@@ -9,10 +10,12 @@ import androidx.room.Update;
 import com.example.a5046groupproject.entity.Activity;
 
 import java.util.ArrayList;
+import java.util.List;
 
+@Dao
 public interface ActivityDAO {
     @Query("SELECT * FROM activity ORDER BY uid ASC")
-    LiveData<ArrayList<Activity>> getAll();
+    LiveData<List<Activity>> getAll();
 
     @Query("SELECT * FROM activity WHERE uid = :activity_id LIMIT 1")
     Activity findByID(int activity_id);

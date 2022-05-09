@@ -2,8 +2,10 @@ package com.example.a5046groupproject.entity;
 
 import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
+import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+@Entity
 public class Activity {
     @PrimaryKey(autoGenerate = true)
     public int uid;

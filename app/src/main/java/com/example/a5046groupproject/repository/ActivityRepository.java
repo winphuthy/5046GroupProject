@@ -11,12 +11,13 @@ import com.example.a5046groupproject.database.ActivityDatabase;
 import com.example.a5046groupproject.entity.Activity;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.CompletableFuture;
 import java.util.function.Supplier;
 
 public class ActivityRepository {
     private ActivityDAO activityDao;
-    private LiveData<ArrayList<Activity>> allActivities;
+    private LiveData<List<Activity>> allActivities;
 
     public ActivityRepository(Application application){
         ActivityDatabase db = ActivityDatabase.getInstance(application);
@@ -24,7 +25,7 @@ public class ActivityRepository {
         allActivities= activityDao.getAll();
     }
     // Room executes this query on a separate thread
-    public LiveData<ArrayList<Activity>> getAllActivities() {
+    public LiveData<List<Activity>> getAllActivities() {
         return allActivities;
     }
 
