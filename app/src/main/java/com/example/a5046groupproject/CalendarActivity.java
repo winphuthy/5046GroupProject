@@ -15,7 +15,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-public class ActivityAddEvent extends AppCompatActivity implements EventCreate.EventListener {
+public class CalendarActivity extends AppCompatActivity implements EventCreate.EventListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
