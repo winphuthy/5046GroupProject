@@ -27,7 +27,7 @@ public class SyncWorker extends Worker{
         
         String userid = inputData.getString("userid");
         
-        Log.d(TAG, "doWork: number" + number);        
+        Log.d(TAG, "doWork: number" + number);
 
         for (int i = number; i > 0; i--) {
             Log.d(TAG, "doWork: i was " + i);
