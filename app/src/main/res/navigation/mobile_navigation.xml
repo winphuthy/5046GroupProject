@@ -5,15 +5,7 @@
     app:startDestination="@id/nav_home_fragment">
 
     <fragment
-        android:id="@+id/nav_add_fragment"
-        android:name="com.example.a5046groupproject.fragment.AddFragment"
-        android:label="AddFragment" />
-    <fragment
         android:id="@+id/nav_home_fragment"
         android:name="com.example.a5046groupproject.fragment.HomeFragment"
         android:label="HomeFragment" />
-    <fragment
-        android:id="@+id/nav_view_fragment"
-        android:name="com.example.a5046groupproject.fragment.ViewFragment"
-        android:label="ViewFragment" />
 </navigation>

@@ -47,6 +47,10 @@ public class ProfileActivity extends AppCompatActivity{
             createNewDialogue();
         });
 
+        binding.rv.setOnClickListener(view -> {
+            startActivity(new Intent(this, storyList_Activity.class));
+        });
+
         Data data = new Data.Builder()
                 .putInt("number", 10)
                 .build();
