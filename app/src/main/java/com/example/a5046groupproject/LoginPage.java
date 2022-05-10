@@ -67,6 +67,9 @@ public class LoginPage extends AppCompatActivity{
             startActivityForResult(intent, RC_SIGN_IN);
         });
 
+        binding.rvlogin.setOnClickListener(view ->{
+            startActivity(new Intent(this, storyList_Activity.class));
+        });
 
         binding.loginBtn.setOnClickListener(view -> {
             userLogin();
