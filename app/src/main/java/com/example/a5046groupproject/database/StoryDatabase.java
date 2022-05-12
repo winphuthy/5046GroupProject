@@ -26,7 +26,10 @@ public abstract class StoryDatabase extends RoomDatabase {
     //A synchronized method in a multi threaded environment means that two threads are not allowed to access data at the same time
     public static synchronized StoryDatabase getInstance(final Context context) {
         if (INSTANCE == null) {
-            INSTANCE = Room.databaseBuilder(context.getApplicationContext(),StoryDatabase.class, "StoryDatabase").fallbackToDestructiveMigration().build();
+            INSTANCE = Room.databaseBuilder(context.getApplicationContext(),
+                    StoryDatabase.class, "StoryDatabase")
+                    .fallbackToDestructiveMigration()
+                    .build();
         }
         return INSTANCE;
     }

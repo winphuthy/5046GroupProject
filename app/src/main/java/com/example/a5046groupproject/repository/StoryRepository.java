@@ -30,6 +30,8 @@ public class StoryRepository {
         return allStories;
     }
 
+    public List<Story> getStoryList() { return storyDao.getStoryList(); }
+
     //insert one
     public void insert(final Story story) {
         StoryDatabase.databaseWriteExecutor.execute(new Runnable() {
@@ -48,25 +50,5 @@ public class StoryRepository {
                 storyDao.delete(story);
             }
         });
-    }
-
-    public void updateStory(final Story story){
-        StoryDatabase.databaseWriteExecutor.execute(new Runnable() {
-            @Override
-            public void run() {
-                storyDao.updateStory(story);
-            }
-        });
-    }
-
-    @RequiresApi(api = Build.VERSION_CODES.N)
-    public CompletableFuture<Story> findByIDFuture(final int userId) {
-
-        return CompletableFuture.supplyAsync(new Supplier<Story>() {
-            @Override
-            public Story get() {
-                return storyDao.findByID(userId);
-            }
-        }, StoryDatabase.databaseWriteExecutor);
     }
 }

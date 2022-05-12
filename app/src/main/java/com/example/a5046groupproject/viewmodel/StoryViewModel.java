@@ -3,7 +3,6 @@ package com.example.a5046groupproject.viewmodel;
 import android.app.Application;
 import android.os.Build;
 
-import androidx.annotation.RequiresApi;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 
@@ -23,14 +22,18 @@ public class StoryViewModel extends AndroidViewModel {
         sRepository = new StoryRepository(application);
         allStories = sRepository.getAllStories();
     }
-
+/* pending
     @RequiresApi(api = Build.VERSION_CODES.N)
     public CompletableFuture<Story> findByIDFuture(final int userId){
         return sRepository.findByIDFuture(userId);
     }
+*/
+
     public LiveData<List<Story>> getAllStories(){
         return allStories;
     }
+
+    public List<Story> getStoryList() {return sRepository.getStoryList(); }
 
     public void insert(Story story){
         sRepository.insert(story);
@@ -40,8 +43,10 @@ public class StoryViewModel extends AndroidViewModel {
         sRepository.delete(story);
     }
 
+/*pending
     public void updateStory(Story story){
         sRepository.updateStory(story);
     }
+    */
 }
 
