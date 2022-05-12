@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.TimePicker;
 
 import androidx.annotation.NonNull;
@@ -21,19 +22,32 @@ import java.util.Locale;
 
 public class EventCreate extends AppCompatDialogFragment {
     private EditText inputTitle;
-    private EditText inputStartTime;
-    private EditText inputEndTime;
+    private TextView inputStartTime, chooseDate;
+    private TextView inputEndTime;
     private EditText inputDesc;
     private EditText inputLocation;
     private EventListener eventListener;
-    private Button buttonTime;
+    private Button buttonStartTime, buttonFinishTime;
     private int hour, minute;
+    private CharSequence selectDate;
+    public EventCreate(CharSequence date) {
+        selectDate = date;
+    }
+
     @Override
     public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         LayoutInflater layoutInflater = getActivity().getLayoutInflater();
         View view = layoutInflater.inflate(R.layout.layout_event, null);
-        buttonTime = view.findViewById(R.id.buttonTimePicker);
+        buttonStartTime = view.findViewById(R.id.buttonTimePicker);
+        buttonFinishTime = view.findViewById(R.id.buttonFinishTime);
+        inputTitle = view.findViewById(R.id.inputTitle);
+        inputStartTime = view.findViewById(R.id.inputStartTime);
+        inputEndTime = view.findViewById(R.id.inputEndTime);
+        inputDesc = view.findViewById(R.id.inputDesc);
+        inputLocation = view.findViewById(R.id.inputLocation);
+        chooseDate = view.findViewById(R.id.chooseDate);
+        chooseDate.setText(selectDate.toString());
         builder.setView(view)
                 .setTitle("Add Event")
                 .setNegativeButton("cancel", new DialogInterface.OnClickListener() {
@@ -45,18 +59,19 @@ public class EventCreate extends AppCompatDialogFragment {
                 .setPositiveButton("Add", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
+                        String date = chooseDate.getText().toString();
                         String title = inputTitle.getText().toString();
-                        String startTime = inputStartTime.getText().toString();
-                        String endTime = inputEndTime.getText().toString();
+                        String startTime = buttonStartTime.getText().toString();
+                        String endTime = buttonFinishTime.getText().toString();
                         String desc = inputDesc.getText().toString();
                         String location = inputLocation.getText().toString();
                         System.out.println(CalendarContract.Calendars._ID + "line 50");
-                        //eventListener.sendText(title,startTime,endTime,desc,location);
+                        eventListener.sendText(date, title,startTime,endTime,desc,location);
 
 
                     }
                 });
-        buttonTime.setOnClickListener(new View.OnClickListener() {
+        buttonStartTime.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 TimePickerDialog.OnTimeSetListener onTimeSetListener = new TimePickerDialog.OnTimeSetListener() {
@@ -64,7 +79,7 @@ public class EventCreate extends AppCompatDialogFragment {
                     public void onTimeSet(TimePicker timePicker, int hourPicker, int minutePicker) {
                         hour = hourPicker;
                         minute = minutePicker;
-                        buttonTime.setText(String.format("%02d:%02d",hour,minute));
+                        buttonStartTime.setText(String.format("%02d:%02d",hour,minute));
                     }
                 };
                 TimePickerDialog timePickerDialog = new TimePickerDialog(view.getContext(),2, onTimeSetListener, hour, minute, true);
@@ -72,11 +87,23 @@ public class EventCreate extends AppCompatDialogFragment {
                 timePickerDialog.show();
             }
         });
-        inputTitle = view.findViewById(R.id.inputTitle);
-        inputStartTime = view.findViewById(R.id.inputStartTime);
-        inputEndTime = view.findViewById(R.id.inputEndTime);
-        inputDesc = view.findViewById(R.id.inputDesc);
-        inputLocation = view.findViewById(R.id.inputLocation);
+        buttonFinishTime.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                TimePickerDialog.OnTimeSetListener onTimeSetListener = new TimePickerDialog.OnTimeSetListener() {
+                    @Override
+                    public void onTimeSet(TimePicker timePicker, int hourPicker, int minutePicker) {
+                        hour = hourPicker;
+                        minute = minutePicker;
+                        buttonFinishTime.setText(String.format("%02d:%02d",hour,minute));
+                    }
+                };
+                TimePickerDialog timePickerDialog = new TimePickerDialog(view.getContext(),2, onTimeSetListener, hour, minute, true);
+                timePickerDialog.setTitle("Select time");
+                timePickerDialog.show();
+            }
+        });
+
         return builder.create();
     }
 
@@ -91,6 +118,6 @@ public class EventCreate extends AppCompatDialogFragment {
     }
 
     public interface EventListener{
-        void sendText (String title, String startTime, String endTime, String desc, String location) ;
+        void sendText (String date,String title, String startTime, String endTime, String desc, String location) ;
     }
 }

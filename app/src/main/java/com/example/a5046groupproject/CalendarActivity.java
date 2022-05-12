@@ -4,7 +4,9 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.CalendarContract;
+import android.view.View;
 import android.widget.CalendarView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -25,26 +27,25 @@ public class CalendarActivity extends AppCompatActivity implements EventCreate.E
             @Override
             public void onSelectedDayChange(@NonNull CalendarView calendarView, int i, int i1, int i2) {
 
-                TextView textView = (TextView) calendarView.findViewById(R.id.chooseDate);
                 CharSequence date = (i2+"/"+(i1+1)+"/"+i);
-                System.out.println(textView+"line 36");
-                //textView.setText("test");
-                openDialog();
+                System.out.println(date.toString()+"line 36");
+                openDialog(date);
             }
         });
     }
-    public void openDialog(){
-        EventCreate eventCreate = new EventCreate();
+    public void openDialog(CharSequence date){
+        EventCreate eventCreate = new EventCreate(date);
         eventCreate.show(getSupportFragmentManager(),"Line40");
     }
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
-    public void sendText(String title, String startTime, String endTime, String desc, String location){
+    public void sendText(String date, String title, String startTime, String endTime, String desc, String location){
         Calendar sTime = Calendar.getInstance();
         Calendar eTime = Calendar.getInstance();
-        String time = "25/04/2022 10:30";
-
+        startTime = date +" "+ startTime;
+        endTime = date + " " + endTime;
+        System.out.println("line 47 "+ startTime);
         try {
             sTime.setTime(new SimpleDateFormat("dd/MM/yyyy HH:mm").parse(startTime));
         } catch (ParseException e) {
