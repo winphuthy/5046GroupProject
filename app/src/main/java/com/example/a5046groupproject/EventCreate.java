@@ -18,8 +18,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatDialogFragment;
 
-import java.util.Locale;
-
 public class EventCreate extends AppCompatDialogFragment {
     private EditText inputTitle;
     private TextView inputStartTime, chooseDate;
@@ -98,7 +96,8 @@ public class EventCreate extends AppCompatDialogFragment {
                         buttonFinishTime.setText(String.format("%02d:%02d",hour,minute));
                     }
                 };
-                TimePickerDialog timePickerDialog = new TimePickerDialog(view.getContext(),2, onTimeSetListener, hour, minute, true);
+                TimePickerDialog timePickerDialog = new TimePickerDialog(view.getContext(),2,
+                        onTimeSetListener, hour, minute, true);
                 timePickerDialog.setTitle("Select time");
                 timePickerDialog.show();
             }

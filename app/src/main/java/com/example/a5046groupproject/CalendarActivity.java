@@ -4,10 +4,7 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.CalendarContract;
-import android.view.View;
 import android.widget.CalendarView;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
@@ -64,7 +61,5 @@ public class CalendarActivity extends AppCompatActivity implements EventCreate.E
                 .putExtra(CalendarContract.Events.DESCRIPTION, desc)
                 .putExtra(CalendarContract.Events.EVENT_LOCATION, location);
         startActivity(intent);
-        //System.out.println(cal+"line 52");
-        //System.out.println(title + startTime + endTime + desc + location);
     }
 }
