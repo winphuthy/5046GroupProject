@@ -15,7 +15,7 @@
         android:layout_width="117dp"
         android:layout_height="35dp"
         android:layout_gravity="center"
-        android:text="25/04"
+        android:text="Date"
         android:textSize="20dp"
         android:textAlignment="center"
         >
