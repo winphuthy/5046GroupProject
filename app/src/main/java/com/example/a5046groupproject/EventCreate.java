@@ -6,7 +6,6 @@ import android.app.TimePickerDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
-import android.provider.CalendarContract;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
@@ -19,11 +18,8 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatDialogFragment;
 
 public class EventCreate extends AppCompatDialogFragment {
-    private EditText inputTitle;
-    private TextView inputStartTime, chooseDate;
-    private TextView inputEndTime;
-    private EditText inputDesc;
-    private EditText inputLocation;
+    private EditText inputTitle, inputDesc, inputLocation;
+    private TextView inputStartTime, chooseDate, inputEndTime;
     private EventListener eventListener;
     private Button buttonStartTime, buttonFinishTime;
     private int hour, minute;
@@ -63,8 +59,23 @@ public class EventCreate extends AppCompatDialogFragment {
                         String endTime = buttonFinishTime.getText().toString();
                         String desc = inputDesc.getText().toString();
                         String location = inputLocation.getText().toString();
-                        System.out.println(CalendarContract.Calendars._ID + "line 50");
-                        eventListener.sendText(date, title,startTime,endTime,desc,location);
+
+                        if(title.length()==0){
+                            AlertDialog alertDialog = new AlertDialog.Builder(getContext()).create();
+                            alertDialog.setTitle("Error");
+                            alertDialog.setMessage("need to include title");
+                            alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL,"ok",
+                                    new DialogInterface.OnClickListener(){
+                                        public void onClick(DialogInterface dialogInterface1, int which){
+                                            dialogInterface1.dismiss();
+                                        }
+                                    });
+                            alertDialog.show();
+                        }else {
+                            eventListener.sendText(date, title,startTime,endTime,desc,location);
+                        }
+
+
 
 
                     }
@@ -112,7 +123,7 @@ public class EventCreate extends AppCompatDialogFragment {
         try {
             eventListener = (EventListener) context;
         } catch (Exception e) {
-            throw new ClassCastException(context.toString()+"line 52");
+            throw new ClassCastException(context.toString()+"on Attach");
         }
     }
 
