@@ -13,7 +13,29 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:text="PieGraph" />
-
+    <Button
+        android:id="@+id/startDateBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="120dp"
+        android:text="Start Date"
+        >
+    </Button>
+    <Button
+        android:id="@+id/endDateBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="250dp"
+        android:text="End Date"
+        >
+    </Button>
+    <Button
+        android:id="@+id/generateGraphBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="120dp"
+        android:text="Generate Graph" />
     <com.github.mikephil.charting.charts.BarChart
         android:id="@+id/barChart"
         android:layout_width="360dp"

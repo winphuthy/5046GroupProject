@@ -25,9 +25,9 @@ public class RoomActivity extends AppCompatActivity{
         
         String id = mAuth.getCurrentUser().getUid();
         
-        Story test1 = new Story(id, "title xxx1", "detail xxx1", "type1", 11.0f, "123123123");
-        Story test2 = new Story(id, "title xxx2", "detail xxx2", "type2", 12.0f, "123123123");
-        Story test3 = new Story(id, "title xxx3", "detail xxx3", "type3", 13.0f, "123123123");
+        Story test1 = new Story(id, "title xxx1", "detail xxx1", "type1", 11.0f, "14/05/2022");
+        Story test2 = new Story(id, "title xxx2", "detail xxx2", "type2", 12.0f, "15/05/2022");
+        Story test3 = new Story(id, "title xxx3", "detail xxx3", "type3", 13.0f, "16/05/2022");
 
         StoryRepository sr = new StoryRepository(getApplication());
         sr.insert(test1);
