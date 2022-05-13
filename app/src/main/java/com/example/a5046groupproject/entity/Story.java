@@ -5,12 +5,21 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+import com.example.a5046groupproject.adapter.StoryAdapter;
+
 import org.jetbrains.annotations.NotNull;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity(tableName = "story_table")
-public class Story {
+public class Story{
     @PrimaryKey(autoGenerate = true)
     public int uid;
+
+    @ColumnInfo(name = "owner_id")
+    @NonNull
+    public String ownerID;
 
     @ColumnInfo(name = "story_title")
     @NonNull
@@ -30,11 +39,14 @@ public class Story {
 
     @ColumnInfo(name = "story_time")
     @NotNull
-    public long storyTime;
+    public String storyTime;
 
 
-    public Story(@NonNull String storyTitle, @NonNull String details, @NonNull String consumeType, float price, long storyTime) {
+    public Story(@NonNull String ownerID, @NonNull String storyTitle, @NonNull String details,
+                 @NonNull String consumeType
+            , float price, String storyTime){
 
+        this.ownerID = ownerID;
         this.storyTitle = storyTitle;
         this.details = details;
         this.consumeType = consumeType;
@@ -42,50 +54,63 @@ public class Story {
         this.storyTime = storyTime;
     }
 
-    public int getUid() { return uid; }
+    public String getOwnerID(){
+        return ownerID;
+    }
 
-    public void setUid(int uid) { this.uid = uid; }
+    public void setOwnerID(int uid){
+        this.uid = uid;
+    }
+
+    public int getUid(){
+        return uid;
+    }
+
+    public void setUid(int uid){
+        this.uid = uid;
+    }
 
 
-    public String getStoryTitle() {
+    public String getStoryTitle(){
         return storyTitle;
     }
 
-    public void setStoryTitle(@NonNull String storyTitle) {
+    public void setStoryTitle(@NonNull String storyTitle){
         this.storyTitle = storyTitle;
     }
 
 
-    public String getDetails() {
+    public String getDetails(){
         return details;
     }
 
-    public void setDetails(@NonNull String details) {
+    public void setDetails(@NonNull String details){
         this.details = details;
     }
 
 
-    public String getConsumeType() {
+    public String getConsumeType(){
         return consumeType;
     }
 
-    public void setConsumeType(@NonNull String consumeType) {
+    public void setConsumeType(@NonNull String consumeType){
         this.consumeType = consumeType;
     }
 
-    public float getPrice() {
+    public float getPrice(){
         return price;
     }
 
-    public void setPrice(float price) {
+    public void setPrice(float price){
         this.price = price;
     }
 
-    public long getStoryTime() {
+    public String getStoryTime(){
         return storyTime;
     }
 
-    public void setStoryTime(long storyTime) {
+    public void setStoryTime(String storyTime){
         this.storyTime = storyTime;
     }
+
 }

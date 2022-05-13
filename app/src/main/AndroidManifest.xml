@@ -1,45 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.a5046groupproject">
+        package="com.example.a5046groupproject">
 
     <uses-permission android:name="android.permission.READ_CALENDAR" />
     <uses-permission android:name="android.permission.WRITE_CALENDAR" />
     <uses-permission android:name="android.permission.INTERNET" />
-
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
-    <application
-        android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
-        android:supportsRtl="true"
-        android:theme="@style/Theme.5046GroupProject">
-        <activity
-            android:name=".storyList_Activity"
-            android:exported="false" />
 
+    <application
+            android:allowBackup="true"
+            android:icon="@mipmap/ic_launcher"
+            android:label="@string/app_name"
+            android:roundIcon="@mipmap/ic_launcher_round"
+            android:supportsRtl="true"
+            android:theme="@style/Theme.5046GroupProject">
         <activity
-            android:name=".BarActivity"
-            android:exported="false" />
+                android:name=".RoomActivity"
+                android:exported="false" />
         <activity
-            android:name=".GraphActivity"
-            android:exported="false" />
+                android:name=".storyList_Activity"
+                android:exported="false" />
         <activity
-            android:name=".RegisterActivity"
-            android:exported="false" />
+                android:name=".BarActivity"
+                android:exported="false" />
         <activity
-            android:name=".PopupTest"
-            android:exported="false" />
+                android:name=".GraphActivity"
+                android:exported="false" />
         <activity
-            android:name=".LoginPage"
-            android:exported="false" />
+                android:name=".RegisterActivity"
+                android:exported="false" />
         <activity
-            android:name=".MainActivity"
-            android:exported="true"
-            android:theme="@style/Theme.5046GroupProject.NoActionBar">
+                android:name=".PopupTest"
+                android:exported="false" />
+        <activity
+                android:name=".LoginPage"
+                android:exported="false" />
+        <activity
+                android:name=".ProfileActivity"
+                android:exported="false" />
+        <activity
+                android:name=".MainActivity"
+                android:exported="true"
+                android:theme="@style/Theme.5046GroupProject.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -48,19 +53,19 @@
         </activity>
 
         <meta-data
-            android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyBjpMeDOEA1JAltXcx-esvJkNi6Aeg6KxA" />
+                android:name="com.google.android.geo.API_KEY"
+                android:value="AIzaSyBjpMeDOEA1JAltXcx-esvJkNi6Aeg6KxA" />
 
         <activity
-            android:name=".MapsActivity"
-            android:exported="false"
-            android:label="MapsActivity" />
+                android:name=".MapsActivity"
+                android:exported="false"
+                android:label="MapsActivity" />
         <activity
-            android:name=".CalendarActivity"
-            android:exported="false" />
+                android:name=".CalendarActivity"
+                android:exported="false" />
         <activity
-            android:name=".MainButtonActivity"
-            android:exported="false" />
+                android:name=".MainButtonActivity"
+                android:exported="false" />
     </application>
 
 </manifest>

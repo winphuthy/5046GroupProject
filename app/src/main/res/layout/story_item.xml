@@ -1,25 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_marginStart="8dp"
-    android:layout_marginTop="8dp"
-    android:layout_marginEnd="8dp">
 
-    <androidx.cardview.widget.CardView
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginTop="7dp"
         android:layout_marginBottom="7dp">
-        <TableLayout
+
+    <TableLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:stretchColumns=",1"
             android:orientation="horizontal">
-            <TableRow>
-                <LinearLayout
+
+        <TableRow>
+
+            <LinearLayout
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
@@ -27,74 +24,78 @@
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="5dp"
                     android:orientation="vertical">
-                    <TextView
+
+                <TextView
                         android:id="@+id/ViewTitle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Title"
+                        android:text="@string/title"
                         android:textStyle="bold"
-                        android:textSize="18sp"/>
-                    <TextView
+                        android:textSize="18sp" />
+
+                <TextView
                         android:id="@+id/ViewType"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="consume type"
-                        android:textColor="@color/material_dynamic_secondary50"/>
-                    <TextView
+                        android:text="@string/consume_type"
+                        android:textColor="@color/material_dynamic_secondary50" />
+
+                <TextView
                         android:id="@+id/ViewDetail"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="details"
-                        android:textColor="@color/material_dynamic_secondary50"/>
-                </LinearLayout>
+                        android:text="@string/details"
+                        android:textColor="@color/material_dynamic_secondary50" />
+            </LinearLayout>
 
-                <LinearLayout
+            <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
                     android:layout_marginTop="5dp"
-                    android:layout_marginLeft="5dp"
-                    android:orientation="vertical"
-                    >
-                    <TextView
+                    android:layout_marginLeft="10dp"
+                    android:orientation="vertical">
+
+                <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Price"
+                        android:text="@string/price"
                         android:textStyle="bold"
-                        android:textSize="18sp"/>
-                    <TextView
+                        android:textSize="18sp" />
+
+                <TextView
                         android:id="@+id/ViewPrice"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="number"
-                        android:textColor="@color/material_dynamic_secondary50"/>
-                    <TextView
+                        android:text="@string/number"
+                        android:textColor="@color/material_dynamic_secondary50" />
+
+                <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Time"
-                        android:textStyle="bold"/>
-                    <TextView
+                        android:text="@string/time"
+                        android:textStyle="bold" />
+
+                <TextView
                         android:id="@+id/ViewTime"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="time"
-                        android:textColor="@color/material_dynamic_secondary50"/>
-                </LinearLayout>
+                        android:text="@string/time"
+                        android:textColor="@color/material_dynamic_secondary50" />
+            </LinearLayout>
 
-                <ImageView
+            <ImageView
                     android:layout_height="wrap_content"
                     android:layout_width="wrap_content"
                     android:layout_marginBottom="5dp"
                     android:layout_marginTop="5dp"
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="5dp"
-                    android:src="@drawable/ic_baseline_delete_outline_24"/>
+                    android:src="@drawable/ic_baseline_delete_outline_24" />
 
-            </TableRow>
+        </TableRow>
 
 
+    </TableLayout>
 
-        </TableLayout>
-
-    </androidx.cardview.widget.CardView>
-    </LinearLayout>
+</androidx.cardview.widget.CardView>

@@ -54,4 +54,5 @@ public class MainButtonActivity<service> extends AppCompatActivity {
         Intent intent = new Intent(this, GraphActivity.class);
         startActivity(intent);
     }
+    
 }

@@ -14,6 +14,8 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.example.a5046groupproject.databinding.ActivityLoginPageBinding;
+import com.example.a5046groupproject.entity.Story;
+import com.example.a5046groupproject.repository.StoryRepository;
 import com.google.android.gms.auth.api.identity.BeginSignInRequest;
 import com.google.android.gms.auth.api.identity.BeginSignInResult;
 import com.google.android.gms.auth.api.identity.Identity;
@@ -52,6 +54,9 @@ public class LoginPage extends AppCompatActivity{
         mAuth = FirebaseAuth.getInstance();
         checkUser();
 
+//        StoryRepository re =new StoryRepository(getApplication());
+//        list<Story> list = re.getStoryFromCustomerInList(mAuth.getUid());
+        
         // building a google sign in option used by google sign in
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.default_web_client_id))
@@ -67,7 +72,7 @@ public class LoginPage extends AppCompatActivity{
             startActivityForResult(intent, RC_SIGN_IN);
         });
 
-        binding.rvlogin.setOnClickListener(view ->{
+        binding.rvlogin.setOnClickListener(view -> {
             startActivity(new Intent(this, storyList_Activity.class));
         });
 
@@ -79,7 +84,6 @@ public class LoginPage extends AppCompatActivity{
 //            Toast.makeText(LoginPage.this, "user on click ", Toast.LENGTH_SHORT).show();
             startActivity(new Intent(LoginPage.this, RegisterActivity.class));
         });
-
 
     }
 
@@ -97,6 +101,7 @@ public class LoginPage extends AppCompatActivity{
 
     /**
      * action when receive the result, create the account information class and verify with firebase
+     *
      * @param requestCode
      * @param resultCode
      * @param data
@@ -119,6 +124,7 @@ public class LoginPage extends AppCompatActivity{
 
     /**
      * verify with firebase
+     *
      * @param account GoogleSignInAccount class, the account information.
      */
     private void firebaseAuthWithGoogleAccount(GoogleSignInAccount account){
@@ -178,6 +184,7 @@ public class LoginPage extends AppCompatActivity{
                         if (task.isSuccessful()) {
 //                            startActivity(new Intent(this, MainActivity.class));
                             Toast.makeText(LoginPage.this, "Add next activity ", Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(LoginPage.this, ProfileActivity.class));
                         }
                     }
                 });

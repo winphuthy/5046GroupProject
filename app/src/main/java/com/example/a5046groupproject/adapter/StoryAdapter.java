@@ -9,46 +9,48 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.a5046groupproject.R;
-import com.example.a5046groupproject.databinding.ActivityStoryListBinding;
 import com.example.a5046groupproject.entity.Story;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class StoryAdapter extends RecyclerView.Adapter<StoryAdapter.NoteHolder> {
-    private List<Story> stories;
-    private ActivityStoryListBinding binding;
+public class StoryAdapter extends RecyclerView.Adapter<StoryAdapter.ViewHolder>{
+    private List<Story> stories = new ArrayList<>();
+    
+    public StoryAdapter(List<Story> stories){
+        this.stories = stories;
+    }
 
     @NonNull
     @Override
-    public NoteHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType){
         View itemView = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.story_item, parent, false);
-        return new NoteHolder(itemView);
+        return new ViewHolder(itemView);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull NoteHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position){
         Story currentStory = stories.get(position);
         holder.textViewTitle.setText(currentStory.getStoryTitle());
         holder.textViewDetails.setText(currentStory.getDetails());
-        holder.textViewType.setText(String.valueOf(currentStory.getConsumeType()));
-        holder.textViewPrice.setText(String.valueOf(currentStory.getPrice()));
-        holder.textViewTime.setText(String.valueOf(currentStory.getStoryTime()));
+        holder.textViewType.setText(currentStory.getConsumeType());
+        holder.textViewPrice.setText((int) currentStory.getPrice());
+        holder.textViewTime.setText(currentStory.getStoryTime());
 
     }
 
     @Override
-    public int getItemCount() {
+    public int getItemCount(){
         return stories.size();
     }
 
-    public void setStories(List<Story> notes) {
+    public void setStories(List<Story> notes){
         this.stories = stories;
         notifyDataSetChanged();
     }
 
-    class NoteHolder extends RecyclerView.ViewHolder {
+    public static class ViewHolder extends RecyclerView.ViewHolder{
         private TextView textViewTitle;
         private TextView textViewDetails;
         private TextView textViewType;
@@ -56,7 +58,7 @@ public class StoryAdapter extends RecyclerView.Adapter<StoryAdapter.NoteHolder> 
         private TextView textViewTime;
 
 
-        public NoteHolder(View itemView) {
+        public ViewHolder(View itemView){
             super(itemView);
             textViewTitle = itemView.findViewById(R.id.ViewTitle);
             textViewDetails = itemView.findViewById(R.id.ViewDetail);

@@ -75,9 +75,8 @@ public class EventCreate extends AppCompatDialogFragment {
                             eventListener.sendText(date, title,startTime,endTime,desc,location);
                         }
 
-
-
-
+                        // TODO: add insert method
+                        
                     }
                 });
         buttonStartTime.setOnClickListener(new View.OnClickListener() {

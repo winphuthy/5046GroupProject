@@ -15,13 +15,13 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class RegisterActivity extends AppCompatActivity {
+public class RegisterActivity extends AppCompatActivity{
 
     private ActivityRegisterBinding binding;
     private FirebaseAuth mAuth;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         binding = ActivityRegisterBinding.inflate(getLayoutInflater());
         View root = binding.getRoot();
@@ -39,7 +39,7 @@ public class RegisterActivity extends AppCompatActivity {
     /**
      * Create a user by login with email
      */
-    private void createUser() {
+    private void createUser(){
 
         String email = binding.etRegEmail.getText().toString();
         String password = binding.etRegPass.getText().toString();
@@ -51,13 +51,13 @@ public class RegisterActivity extends AppCompatActivity {
             binding.etRegPass.setError("Password cannot be empty");
             binding.etRegPass.requestFocus();
         } else {
-            mAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>(){
                 @Override
-                public void onComplete(@NonNull Task<AuthResult> task) {
-                    if (task.isSuccessful()){
+                public void onComplete(@NonNull Task<AuthResult> task){
+                    if (task.isSuccessful()) {
                         Toast.makeText(RegisterActivity.this, "User registered successfully", Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(RegisterActivity.this, LoginPage.class));
-                    }else{
+                    } else {
                         Toast.makeText(RegisterActivity.this, "Registration Error: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 }

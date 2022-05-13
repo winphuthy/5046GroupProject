@@ -8,29 +8,38 @@ import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 
+import com.example.a5046groupproject.database.StoryDatabase;
 import com.example.a5046groupproject.databinding.ActivityLoginPageBinding;
 import com.example.a5046groupproject.databinding.ActivityMainBinding;
+import com.example.a5046groupproject.entity.Story;
+import com.example.a5046groupproject.repository.StoryRepository;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class MainActivity extends AppCompatActivity {
+import java.util.List;
+
+public class MainActivity extends AppCompatActivity{
 
     private static final String TAG = "Database test";
     private ActivityMainBinding binding;
     private FirebaseAuth mAuth;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
-        View view = binding.getRoot();
-        setContentView(view);
+        setContentView(binding.getRoot());
 
         mAuth = FirebaseAuth.getInstance();
+
+        binding.buttonPage.setOnClickListener(view -> {
+            startActivity(new Intent(this, MainButtonActivity.class));
+        });
+        
     }
 
     @Override
-    protected void onStart() {
+    protected void onStart(){
         super.onStart();
         FirebaseUser user = mAuth.getCurrentUser();
         if (user == null) {
@@ -39,8 +48,4 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    /*@Override
-    public boolean onTouchEvent(MotionEvent event) {
-        
-    }*/
 }

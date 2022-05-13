@@ -50,6 +50,14 @@ public class ProfileActivity extends AppCompatActivity{
         binding.rv.setOnClickListener(view -> {
             startActivity(new Intent(this, storyList_Activity.class));
         });
+        
+        binding.roomtest.setOnClickListener(view -> {
+            startActivity(new Intent(this, RoomActivity.class));
+        });
+
+        binding.ziheng.setOnClickListener(view -> {
+            startActivity(new Intent(this, MainButtonActivity.class));
+        });
 
         Data data = new Data.Builder()
                 .putInt("number", 10)
