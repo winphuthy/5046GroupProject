@@ -36,13 +36,13 @@
                 android:name=".PopupTest"
                 android:exported="false" />
         <activity
-                android:name=".LoginPage"
+                android:name=".MainActivity"
                 android:exported="false" />
         <activity
                 android:name=".ProfileActivity"
                 android:exported="false" />
         <activity
-                android:name=".MainActivity"
+                android:name=".LoginPage"
                 android:exported="true"
                 android:theme="@style/Theme.5046GroupProject.NoActionBar">
             <intent-filter>
