@@ -13,6 +13,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.a5046groupproject.R;
 import com.example.a5046groupproject.entity.Story;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 public class StoryAdapter extends RecyclerView.Adapter<StoryAdapter.ViewHolder> {
@@ -28,9 +30,9 @@ public class StoryAdapter extends RecyclerView.Adapter<StoryAdapter.ViewHolder> 
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int viewType) {
         // Create a new view
-        View itemView = LayoutInflater.from(viewGroup.getContext())
-                .inflate(R.layout.item_story_recycler_view, viewGroup, false);
-        return new ViewHolder(itemView);
+        View view = LayoutInflater.from(viewGroup.getContext())
+                .inflate(R.layout.item_story_recycle_view, viewGroup, false);
+        return new ViewHolder(view);
     }
 
     @Override
@@ -39,12 +41,13 @@ public class StoryAdapter extends RecyclerView.Adapter<StoryAdapter.ViewHolder> 
         Story currentStory = stories.get(position);
 
         viewHolder.textViewTitle.setText(currentStory.getStoryTitle());
-        viewHolder.textViewDetails.setText(currentStory.getDetails());
-        viewHolder.textViewType.setText(String.valueOf(currentStory.getConsumeType()));
-        viewHolder.textViewPrice.setText(String.valueOf(currentStory.getPrice()));
         /*
-        DataFormat formatter = new SimpleDateFormat("dd/MM/yyyy")
+        viewHolder.textViewDetails.setText(currentStory.getDetails());
         */
+        viewHolder.textViewType.setText(currentStory.getConsumeType());
+        viewHolder.textViewPrice.setText(String.valueOf(currentStory.getPrice()));
+
+        DateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
         viewHolder.textViewTime.setText(String.valueOf(currentStory.getStoryTime()));
 
         if (onItemClickListener!=null){
@@ -84,22 +87,20 @@ public class StoryAdapter extends RecyclerView.Adapter<StoryAdapter.ViewHolder> 
 
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        private final TextView textViewTitle;
-        private final TextView textViewDetails;
         private final TextView textViewType;
+        private final TextView textViewTitle;
         private final TextView textViewPrice;
-        private final TextView textViewTime;
         private final ImageView imageDelete;
+        private final TextView textViewTime;
 
 
-        public ViewHolder(View itemView) {
-            super(itemView);
-            textViewTitle = itemView.findViewById(R.id.ViewTitle);
-            textViewDetails = itemView.findViewById(R.id.ViewDetail);
-            textViewType = itemView.findViewById(R.id.ViewType);
-            textViewPrice = itemView.findViewById(R.id.ViewPrice);
-            textViewTime = itemView.findViewById(R.id.ViewTime);
+        public ViewHolder(View view) {
+            super(view);
+            textViewTitle = itemView.findViewById(R.id.text_story_title);
+            textViewType = itemView.findViewById(R.id.text_consume_type);
+            textViewPrice = itemView.findViewById(R.id.edit_text_price);
+            textViewTime = itemView.findViewById(R.id.text_date);
             imageDelete = itemView.findViewById(R.id.image_delete);
-        }
+
     }
-}
+}}

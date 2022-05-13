@@ -67,10 +67,6 @@ public class LoginPage extends AppCompatActivity{
             startActivityForResult(intent, RC_SIGN_IN);
         });
 
-        binding.rvlogin.setOnClickListener(view ->{
-            startActivity(new Intent(this, storyList_Activity.class));
-        });
-
         binding.loginBtn.setOnClickListener(view -> {
             userLogin();
         });
@@ -78,6 +74,10 @@ public class LoginPage extends AppCompatActivity{
         binding.registerBtn.setOnClickListener(view -> {
 //            Toast.makeText(LoginPage.this, "user on click ", Toast.LENGTH_SHORT).show();
             startActivity(new Intent(LoginPage.this, RegisterActivity.class));
+        });
+
+        binding.StoryListBtn.setOnClickListener(view -> {
+            startActivity(new Intent(LoginPage.this, StoryListActivity.class));
         });
 
 
@@ -90,7 +90,7 @@ public class LoginPage extends AppCompatActivity{
         FirebaseUser user = mAuth.getCurrentUser();
         if (user != null) {
             Log.d(TAG, "checkUser: Logged in already");
-            startActivity(new Intent(this, ProfileActivity.class));
+            startActivity(new Intent(this, MainActivity.class));
             finish();
         }
     }
@@ -146,8 +146,8 @@ public class LoginPage extends AppCompatActivity{
                                 Toast.LENGTH_SHORT).show();
                     }
 
-                    //Start profile activity
-                    startActivity(new Intent(this, ProfileActivity.class));
+                    //Start Home activity
+                    startActivity(new Intent(this, MainActivity.class));
                     finish();
 
                 }).addOnFailureListener(e -> {

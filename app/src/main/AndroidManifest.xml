@@ -14,6 +14,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.5046GroupProject">
         <activity
+            android:name=".StoryListActivity"
+            android:exported="false" />
+        <activity
             android:name=".RegisterActivity"
             android:exported="false" />
         <activity
@@ -33,7 +36,6 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyBjpMeDOEA1JAltXcx-esvJkNi6Aeg6KxA" />
-
     </application>
 
 </manifest>

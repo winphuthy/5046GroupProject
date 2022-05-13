@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    >tools:context=".fragment.AddStoryFragment"
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView2"
         style="@style/Widget.Material3.CardView.Outlined"
-        android:layout_width="389dp"
-        android:layout_height="69dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="60dp"
         android:layout_marginEnd="10dp"
         app:cardCornerRadius="15dp"
         app:cardElevation="10dp"
@@ -30,7 +32,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="5dp"
-                android:text="Type of the consume"
+                android:text="Consume Type"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -45,20 +47,20 @@
                 app:singleSelection="true">
 
                 <com.google.android.material.chip.Chip
-                    android:id="@+id/type1"
+                    android:id="@+id/chip_breakfast"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:checked="true"
                     android:text="Type 1" />
 
                 <com.google.android.material.chip.Chip
-                    android:id="@+id/type2"
+                    android:id="@+id/chip_lunch"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Type 2" />
 
                 <com.google.android.material.chip.Chip
-                    android:id="@+id/type3"
+                    android:id="@+id/chip_dinner"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Type 3" />
@@ -68,6 +70,7 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView3"
+        style="@style/Widget.Material3.CardView.Outlined"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
@@ -82,7 +85,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
             <TextView
@@ -90,7 +93,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="5dp"
-                android:text="Information of the Activity"
+                android:text="The Story Information"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -102,7 +105,7 @@
                 android:layout_marginTop="3dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginBottom="3dp"
-                android:hint="Title">
+                android:hint="Story Title">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
@@ -117,22 +120,7 @@
                 android:layout_marginTop="3dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginBottom="3dp"
-                android:hint="details">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/text_input_price"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="3dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginBottom="10dp"
-                android:hint="price ($)">
+                android:hint="Story Details">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
@@ -144,24 +132,60 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
+        style="@style/Widget.Material3.CardView.Outlined"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="10dp"
         app:cardCornerRadius="15dp"
         app:cardElevation="10dp"
         app:cardPreventCornerOverlap="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView3" />
+        app:layout_constraintTop_toBottomOf="@+id/cardView3">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:text="Price"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/edit_text_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:text="0"/>
+
+            <com.google.android.material.slider.Slider
+                android:id="@+id/slider_calorie"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:contentDescription="Price"
+                android:value="0"
+                android:valueFrom="0"
+                android:valueTo="1000" />
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
 
     <Button
-        android:id="@+id/button_add_meal"
+        android:id="@+id/button_add_story"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="300dp"
+        android:layout_marginTop="64dp"
         android:layout_marginEnd="16dp"
         android:text="ADD New Story"
         app:layout_constraintEnd_toEndOf="parent"
@@ -171,8 +195,8 @@
 
     <Button
         android:id="@+id/button_select_date"
-        android:layout_width="137dp"
-        android:layout_height="65dp"
+        android:layout_width="130dp"
+        android:layout_height="53dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="12dp"
         android:layout_marginEnd="16dp"
@@ -186,13 +210,12 @@
         android:id="@+id/text_date"
         android:layout_width="125dp"
         android:layout_height="28dp"
-        android:layout_marginStart="18dp"
+        android:layout_marginStart="28dp"
         android:layout_marginTop="24dp"
         android:text="0"
 
         app:layout_constraintStart_toEndOf="@+id/button_select_date"
         app:layout_constraintTop_toBottomOf="@+id/cardView"
         tools:ignore="MissingConstraints" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

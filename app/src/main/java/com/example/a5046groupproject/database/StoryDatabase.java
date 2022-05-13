@@ -20,7 +20,7 @@ public abstract class StoryDatabase extends RoomDatabase {
     private static StoryDatabase INSTANCE;
 
     //we create an ExecutorService with a fixed thread pool so we can later run database operations asynchronously on a background thread.
-    private static final int NUMBER_OF_THREADS = 4;
+    private static final int NUMBER_OF_THREADS = 5;
     public static final ExecutorService databaseWriteExecutor =
             Executors.newFixedThreadPool(NUMBER_OF_THREADS);
     //A synchronized method in a multi threaded environment means that two threads are not allowed to access data at the same time
