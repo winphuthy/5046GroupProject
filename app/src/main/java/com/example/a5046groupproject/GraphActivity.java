@@ -34,6 +34,7 @@ public class GraphActivity extends AppCompatActivity {
             }
         });
 
+        // TODO: Data collect from this list
         List<PieEntry> pieEntries = new ArrayList<>();
         pieEntries.add(new PieEntry(10.0f,"food"));
         pieEntries.add(new PieEntry(50.0f, "movie"));
