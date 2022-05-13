@@ -39,7 +39,7 @@ public class StoryRepository{
         List<Story> allStory = storyDao.getAllinStory();
         List<Story> result = new ArrayList<>();
         for (Story story : allStory) {
-            if (story.ownerID == customerid) {
+            if (story.ownerID.equals(customerid)) {
                 result.add(story);
             }
         }
