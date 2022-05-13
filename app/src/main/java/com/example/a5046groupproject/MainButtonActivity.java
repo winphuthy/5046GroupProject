@@ -42,7 +42,7 @@ public class MainButtonActivity<service> extends AppCompatActivity {
         });
     }
     public void openCalendar(){
-        Intent intent = new Intent(this,Activity2.class);
+        Intent intent = new Intent(this, CalendarActivity.class);
         startActivity(intent);
     }
     @RequiresApi(api = Build.VERSION_CODES.N)
@@ -54,5 +54,4 @@ public class MainButtonActivity<service> extends AppCompatActivity {
         Intent intent = new Intent(this, GraphActivity.class);
         startActivity(intent);
     }
-    // Show events on user's calendar.
 }

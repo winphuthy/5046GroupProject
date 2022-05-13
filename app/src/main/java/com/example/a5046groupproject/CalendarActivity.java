@@ -5,7 +5,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.provider.CalendarContract;
 import android.widget.CalendarView;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
@@ -15,7 +14,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-public class Activity2 extends AppCompatActivity implements EventCreate.EventListener {
+public class CalendarActivity extends AppCompatActivity implements EventCreate.EventListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,26 +24,25 @@ public class Activity2 extends AppCompatActivity implements EventCreate.EventLis
             @Override
             public void onSelectedDayChange(@NonNull CalendarView calendarView, int i, int i1, int i2) {
 
-                TextView textView = (TextView) calendarView.findViewById(R.id.chooseDate);
                 CharSequence date = (i2+"/"+(i1+1)+"/"+i);
-                System.out.println(textView+"line 36");
-                //textView.setText("test");
-                openDialog();
+                System.out.println(date.toString()+"line 36");
+                openDialog(date);
             }
         });
     }
-    public void openDialog(){
-        EventCreate eventCreate = new EventCreate();
+    public void openDialog(CharSequence date){
+        EventCreate eventCreate = new EventCreate(date);
         eventCreate.show(getSupportFragmentManager(),"Line40");
     }
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
-    public void sendText(String title, String startTime, String endTime, String desc, String location){
+    public void sendText(String date, String title, String startTime, String endTime, String desc, String location){
         Calendar sTime = Calendar.getInstance();
         Calendar eTime = Calendar.getInstance();
-        String time = "25/04/2022 10:30";
-
+        startTime = date +" "+ startTime;
+        endTime = date + " " + endTime;
+        System.out.println("line 47 "+ startTime);
         try {
             sTime.setTime(new SimpleDateFormat("dd/MM/yyyy HH:mm").parse(startTime));
         } catch (ParseException e) {
@@ -63,7 +61,5 @@ public class Activity2 extends AppCompatActivity implements EventCreate.EventLis
                 .putExtra(CalendarContract.Events.DESCRIPTION, desc)
                 .putExtra(CalendarContract.Events.EVENT_LOCATION, location);
         startActivity(intent);
-        //System.out.println(cal+"line 52");
-        //System.out.println(title + startTime + endTime + desc + location);
     }
 }
