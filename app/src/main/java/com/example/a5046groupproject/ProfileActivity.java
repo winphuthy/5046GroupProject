@@ -89,7 +89,7 @@ public class ProfileActivity extends AppCompatActivity{
     private void checkUser(){
         FirebaseUser user = mAuth.getCurrentUser();
         if (user == null) {
-            startActivity(new Intent(this, MainActivity.class));
+            startActivity(new Intent(this, LoginPage.class));
             finish();
         }else {
             String email = user.getEmail();

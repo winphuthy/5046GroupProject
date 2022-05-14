@@ -3,25 +3,40 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Monash Project/5046GroupProject/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2895" />
+        <entry key="..\:/Monash Project/5046GroupProject/app/src/main/res/drawable/ic_baseline_delete_outline_24.xml" value="0.2895" />
+        <entry key="..\:/Monash Project/5046GroupProject/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2895" />
+        <entry key="..\:/Monash Project/5046GroupProject/app/src/main/res/drawable/side_nav_bar.xml" value="0.2895" />
         <entry key="..\:/Monash Project/5046GroupProject/app/src/main/res/layout/activity_2.xml" value="0.32395833333333335" />
         <entry key="..\:/Monash Project/5046GroupProject/app/src/main/res/layout/activity_bar.xml" value="0.32395833333333335" />
+        <entry key="..\:/Monash Project/5046GroupProject/app/src/main/res/layout/activity_button_main.xml" value="0.3129528985507246" />
         <entry key="..\:/Monash Project/5046GroupProject/app/src/main/res/layout/activity_graph.xml" value="0.39947916666666666" />
+        <entry key="..\:/Monash Project/5046GroupProject/app/src/main/res/layout/activity_login_page.xml" value="0.2634245187436677" />
         <entry key="..\:/Monash Project/5046GroupProject/app/src/main/res/layout/activity_main.xml" value="0.2667572463768116" />
         <entry key="..\:/Monash Project/5046GroupProject/app/src/main/res/layout/activity_maps.xml" value="0.2989583333333333" />
+        <entry key="..\:/Monash Project/5046GroupProject/app/src/main/res/layout/activity_navigation.xml" value="0.3129528985507246" />
         <entry key="..\:/Monash Project/5046GroupProject/app/src/main/res/layout/activity_profile.xml" value="0.33" />
         <entry key="..\:/Monash Project/5046GroupProject/app/src/main/res/layout/activity_recycler_view.xml" value="0.32395833333333335" />
         <entry key="..\:/Monash Project/5046GroupProject/app/src/main/res/layout/activity_register.xml" value="0.33242753623188404" />
         <entry key="..\:/Monash Project/5046GroupProject/app/src/main/res/layout/activity_room.xml" value="0.3328125" />
         <entry key="..\:/Monash Project/5046GroupProject/app/src/main/res/layout/activity_story_list.xml" value="0.25" />
+        <entry key="..\:/Monash Project/5046GroupProject/app/src/main/res/layout/add_fragment.xml" value="0.3129528985507246" />
         <entry key="..\:/Monash Project/5046GroupProject/app/src/main/res/layout/app_bar_main.xml" value="0.32395833333333335" />
+        <entry key="..\:/Monash Project/5046GroupProject/app/src/main/res/layout/content_navigation.xml" value="0.3129528985507246" />
         <entry key="..\:/Monash Project/5046GroupProject/app/src/main/res/layout/cost_fragment.xml" value="0.32395833333333335" />
+        <entry key="..\:/Monash Project/5046GroupProject/app/src/main/res/layout/fragment_gallery.xml" value="0.3098958333333333" />
+        <entry key="..\:/Monash Project/5046GroupProject/app/src/main/res/layout/fragment_home.xml" value="0.2875" />
+        <entry key="..\:/Monash Project/5046GroupProject/app/src/main/res/layout/home_fragment.xml" value="0.3129528985507246" />
         <entry key="..\:/Monash Project/5046GroupProject/app/src/main/res/layout/layout_event.xml" value="0.32395833333333335" />
         <entry key="..\:/Monash Project/5046GroupProject/app/src/main/res/layout/nav_header_main.xml" value="0.32395833333333335" />
         <entry key="..\:/Monash Project/5046GroupProject/app/src/main/res/layout/popup.xml" value="0.39947916666666666" />
         <entry key="..\:/Monash Project/5046GroupProject/app/src/main/res/layout/popuptest.xml" value="0.2776268115942029" />
+        <entry key="..\:/Monash Project/5046GroupProject/app/src/main/res/layout/profile_fragment.xml" value="0.3129528985507246" />
+        <entry key="..\:/Monash Project/5046GroupProject/app/src/main/res/layout/report_fragment.xml" value="0.3129528985507246" />
         <entry key="..\:/Monash Project/5046GroupProject/app/src/main/res/layout/rv_layout.xml" value="0.33242753623188404" />
         <entry key="..\:/Monash Project/5046GroupProject/app/src/main/res/layout/setting_fragment.xml" value="0.2671875" />
         <entry key="..\:/Monash Project/5046GroupProject/app/src/main/res/layout/story_item.xml" value="0.67" />
+        <entry key="..\:/Monash Project/5046GroupProject/app/src/main/res/layout/view_fragment.xml" value="0.3129528985507246" />
         <entry key="..\:/Monash Project/5046GroupProject/app/src/main/res/menu/navigation_menu.xml" value="0.5380208333333333" />
       </map>
     </option>
