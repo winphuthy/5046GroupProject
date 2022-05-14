@@ -79,6 +79,10 @@ public class LoginPage extends AppCompatActivity{
         binding.loginBtn.setOnClickListener(view -> {
             userLogin();
         });
+        
+        binding.menu.setOnClickListener(view -> {
+            startActivity(new Intent(this, MainActivity.class));
+        });
 
         binding.registerBtn.setOnClickListener(view -> {
 //            Toast.makeText(LoginPage.this, "user on click ", Toast.LENGTH_SHORT).show();

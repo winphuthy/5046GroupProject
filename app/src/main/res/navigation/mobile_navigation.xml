@@ -1,11 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/mobile_navigation"
-    app:startDestination="@id/nav_home_fragment">
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/mobile_navigation"
+        app:startDestination="@+id/nav_home">
 
     <fragment
-        android:id="@+id/nav_home_fragment"
-        android:name="com.example.a5046groupproject.fragment.HomeFragment"
-        android:label="HomeFragment" />
+            android:id="@+id/nav_home"
+            android:name="com.example.a5046groupproject.ui.home.HomeFragment"
+            android:label="@string/menu_home"
+            tools:layout="@layout/fragment_home" />
+
+    <fragment
+            android:id="@+id/nav_gallery"
+            android:name="com.example.a5046groupproject.ui.gallery.GalleryFragment"
+            android:label="@string/menu_gallery"
+            tools:layout="@layout/fragment_gallery" />
+
+    <fragment
+            android:id="@+id/nav_slideshow"
+            android:name="com.example.a5046groupproject.ui.slideshow.SlideshowFragment"
+            android:label="@string/menu_slideshow"
+            tools:layout="@layout/fragment_slideshow" />
+    <activity
+            android:id="@+id/nav_navigation"
+            android:name="com.example.a5046groupproject.MapsActivity"
+            android:label="activity_maps"
+            tools:layout="@layout/activity_maps" />
+    <activity
+            android:id="@+id/nav_todo"
+            android:name="com.example.a5046groupproject.CalendarActivity"
+            android:label="CalendarActivity" />
+    <activity
+            android:id="@+id/nav_report"
+            android:name="com.example.a5046groupproject.GraphActivity"
+            android:label="activity_graph"
+            tools:layout="@layout/activity_graph" />
+    <activity
+            android:id="@+id/nav_profile"
+            android:name="com.example.a5046groupproject.ProfileActivity"
+            android:label="activity_profile"
+            tools:layout="@layout/activity_profile" />
+    <fragment
+            android:id="@+id/nav_setting"
+            android:name="com.example.a5046groupproject.SettingsFragment"
+            android:label="SettingsFragment" />
 </navigation>
