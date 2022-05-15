@@ -33,10 +33,10 @@ public class StoryAdapter extends RecyclerView.Adapter<StoryAdapter.Holder>{
     public void onBindViewHolder(@NonNull Holder holder, int position){
         Story currentStory = stories.get(position);
         holder.textViewTitle.setText(currentStory.getStoryTitle());
-/*        holder.textViewDetails.setText(currentStory.getDetails());
+        holder.textViewDetails.setText(currentStory.getDetails());
         holder.textViewType.setText(currentStory.getConsumeType());
         holder.textViewPrice.setText(String.valueOf(currentStory.getPrice()));
-        holder.textViewTime.setText(currentStory.getStoryTime());*/
+        holder.textViewTime.setText(currentStory.getStoryTime());
     }
 
     @Override
@@ -59,10 +59,10 @@ public class StoryAdapter extends RecyclerView.Adapter<StoryAdapter.Holder>{
         public Holder(View itemView){
             super(itemView);
             textViewTitle = itemView.findViewById(R.id.ViewTitle);
-/*            textViewDetails = itemView.findViewById(R.id.ViewDetail);
+            textViewDetails = itemView.findViewById(R.id.ViewDetail);
             textViewType = itemView.findViewById(R.id.ViewType);
             textViewPrice = itemView.findViewById(R.id.ViewPrice);
-            textViewTime = itemView.findViewById(R.id.ViewTime);*/
+            textViewTime = itemView.findViewById(R.id.ViewTime);
         }
     }
 }
