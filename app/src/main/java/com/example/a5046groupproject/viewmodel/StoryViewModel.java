@@ -3,6 +3,7 @@ package com.example.a5046groupproject.viewmodel;
 import android.app.Application;
 import android.os.Build;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
@@ -18,7 +19,7 @@ public class StoryViewModel extends AndroidViewModel {
     private StoryRepository sRepository;
     private LiveData<List<Story>> allStories;
 
-    public StoryViewModel(Application application){
+    public StoryViewModel(@NonNull Application application){
         super(application);
         sRepository = new StoryRepository(application);
         allStories = sRepository.getAllStories();
