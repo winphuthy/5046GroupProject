@@ -14,30 +14,29 @@ import com.example.a5046groupproject.entity.Story;
 import java.util.ArrayList;
 import java.util.List;
 
-public class StoryAdapter extends RecyclerView.Adapter<StoryAdapter.ViewHolder>{
-    private List<Story> stories = new ArrayList<>();
-    
+public class StoryAdapter extends RecyclerView.Adapter<StoryAdapter.Holder>{
+    private List<Story> stories;
+
     public StoryAdapter(List<Story> stories){
         this.stories = stories;
     }
 
     @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType){
+    public Holder onCreateViewHolder(@NonNull ViewGroup parent, int viewType){
         View itemView = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.story_item, parent, false);
-        return new ViewHolder(itemView);
+        return new Holder(itemView);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position){
+    public void onBindViewHolder(@NonNull Holder holder, int position){
         Story currentStory = stories.get(position);
         holder.textViewTitle.setText(currentStory.getStoryTitle());
         holder.textViewDetails.setText(currentStory.getDetails());
         holder.textViewType.setText(currentStory.getConsumeType());
-        holder.textViewPrice.setText((int) currentStory.getPrice());
+        holder.textViewPrice.setText(String.valueOf(currentStory.getPrice()));
         holder.textViewTime.setText(currentStory.getStoryTime());
-
     }
 
     @Override
@@ -45,20 +44,19 @@ public class StoryAdapter extends RecyclerView.Adapter<StoryAdapter.ViewHolder>{
         return stories.size();
     }
 
-    public void setStories(List<Story> notes){
+    public void setStories(List<Story> stories){
         this.stories = stories;
         notifyDataSetChanged();
     }
 
-    public static class ViewHolder extends RecyclerView.ViewHolder{
+    public static class Holder extends RecyclerView.ViewHolder{
         private TextView textViewTitle;
         private TextView textViewDetails;
         private TextView textViewType;
         private TextView textViewPrice;
         private TextView textViewTime;
 
-
-        public ViewHolder(View itemView){
+        public Holder(View itemView){
             super(itemView);
             textViewTitle = itemView.findViewById(R.id.ViewTitle);
             textViewDetails = itemView.findViewById(R.id.ViewDetail);

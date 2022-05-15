@@ -1,40 +1,47 @@
 package com.example.a5046groupproject.entity;
 
-import androidx.room.Entity;
-
-
 public class User {
     private String uid;
     private String email;
-    private String pwd;
-    private float totalConsume;
+    private String name;
+    private String description;
 
-    public User(String uid, String email, String pwd) {
+    public User(String uid, String email, String name, String description) {
         this.uid = uid;
         this.email = email;
-        this.pwd = pwd;
-        this.totalConsume = totalConsume;
+        this.name = name;
+        this.description = description;
     }
 
-    public String getUid() { return uid; }
-
-    public void setUid(String uid) { this.uid = uid; }
-
-    public String getEmail() { return email; }
-
-    public void setEmail(String email) { this.email = email; }
-
-    public String getPwd() { return pwd; }
-
-    public void setPwd(String pwd) {
-        this.pwd = pwd;
+    public String getUid(){
+        return uid;
     }
 
-    public float getTotalConsume() {
-        return totalConsume;
+    public void setUid(String uid){
+        this.uid = uid;
     }
 
-    public void setTotalConsume(float totalConsume) {
-        this.totalConsume = totalConsume;
+    public String getEmail(){
+        return email;
+    }
+
+    public void setEmail(String email){
+        this.email = email;
+    }
+
+    public String getName(){
+        return name;
+    }
+
+    public void setName(String name){
+        this.name = name;
+    }
+
+    public String getDescription(){
+        return description;
+    }
+
+    public void setDescription(String description){
+        this.description = description;
     }
 }

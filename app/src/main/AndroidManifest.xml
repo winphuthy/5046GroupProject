@@ -18,6 +18,11 @@
             android:supportsRtl="true"
             android:theme="@style/Theme.5046GroupProject">
         <activity
+                android:name=".MainActivity"
+                android:exported="false"
+                android:label="@string/title_activity_main"
+                android:theme="@style/Theme.5046GroupProject.NoActionBar" />
+        <activity
                 android:name=".RoomActivity"
                 android:exported="false" />
         <activity
@@ -34,9 +39,6 @@
                 android:exported="false" />
         <activity
                 android:name=".PopupTest"
-                android:exported="false" />
-        <activity
-                android:name=".MainActivity"
                 android:exported="false" />
         <activity
                 android:name=".ProfileActivity"
