@@ -63,7 +63,7 @@ public class EventCreate extends AppCompatDialogFragment {
                         if(title.length()==0){
                             AlertDialog alertDialog = new AlertDialog.Builder(getContext()).create();
                             alertDialog.setTitle("Error");
-                            alertDialog.setMessage("need to include title");
+                            alertDialog.setMessage("Need to include title");
                             alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL,"ok",
                                     new DialogInterface.OnClickListener(){
                                         public void onClick(DialogInterface dialogInterface1, int which){

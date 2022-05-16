@@ -10,16 +10,17 @@
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
-        <TextView
-                android:id="@+id/chooseDate"
-                android:layout_width="117dp"
-                android:layout_height="35dp"
-                android:layout_gravity="center"
-                android:text="25/04"
-                android:textSize="20dp"
-                android:textAlignment="center"></TextView>
-    </LinearLayout>
-
+    <TextView
+        android:id="@+id/chooseDate"
+        android:layout_width="117dp"
+        android:layout_height="35dp"
+        android:layout_gravity="center"
+        android:text="Date"
+        android:textSize="20dp"
+        android:textAlignment="center"
+        >
+    </TextView>
+</LinearLayout>
     <EditText
         android:id="@+id/inputTitle"
         android:layout_width="match_parent"

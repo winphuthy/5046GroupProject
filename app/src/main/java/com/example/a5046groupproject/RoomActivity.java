@@ -25,9 +25,9 @@ public class RoomActivity extends AppCompatActivity{
         
         String id = mAuth.getCurrentUser().getUid();
         
-        Story test1 = new Story(id, "title xxx1", "detail xxx1", "type1", 11.0f, "123123123");
-        Story test2 = new Story(id, "title xxx2", "detail xxx2", "type2", 12.0f, "123123123");
-        Story test3 = new Story(id, "title xxx3", "detail xxx3", "type3", 13.0f, "123123123");
+        Story test1 = new Story(id, "title xxx1", "detail xxx1", "type1", 11.0f, "14/05/2022");
+        Story test2 = new Story(id, "title xxx2", "detail xxx2", "type2", 12.0f, "15/05/2022");
+        Story test3 = new Story(id, "title xxx3", "detail xxx3", "type3", 13.0f, "16/05/2022");
 
         StoryRepository sr = new StoryRepository(getApplication());
         sr.insert(test1);
@@ -36,10 +36,17 @@ public class RoomActivity extends AppCompatActivity{
         String content = "";
         List<Story> list = sr.getAllInList();
         int size = list.size();
+        float priceType1=0f, priceType2=0f, priceType3=0f;
+        float price = 0f;
         for (int i = 0; i < size; i++) {
-            content = content + list.get(i).getOwnerID() + "\n";
+            if(list.get(i).getConsumeType().equals("type1")){
+                priceType1+=list.get(i).getPrice();
+            }
+            price += list.get(i).getPrice();
+            System.out.println(price);
         }
         binding.roomtest.setText(content);
+        System.out.println(price + "line 43");
         
         
     }
