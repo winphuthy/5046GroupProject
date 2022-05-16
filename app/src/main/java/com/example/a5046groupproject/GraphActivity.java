@@ -127,11 +127,11 @@ public class GraphActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
             if(day.after(afterDate)&&day.before(beforeDate)){
-                if(result.get(i).getConsumeType().equals("type1")){
+                if(result.get(i).getConsumeType().equals("Food")){
                     priceType1+=result.get(i).getPrice();
-                }else if(result.get(i).getConsumeType().equals("type2")){
+                }else if(result.get(i).getConsumeType().equals("Study")){
                     priceType2+=result.get(i).getPrice();
-                }else if(result.get(i).getConsumeType().equals("type3")){
+                }else if(result.get(i).getConsumeType().equals("Travel")){
                     priceType3+=result.get(i).getPrice();
                 }
             }
@@ -144,9 +144,9 @@ public class GraphActivity extends AppCompatActivity {
         p3 = percent(priceType3,priceType1,priceType2);
 
         List<PieEntry> pieEntries = new ArrayList<>();
-        pieEntries.add(new PieEntry(p1,"Type 1 %"));
-        pieEntries.add(new PieEntry(p2, "Type 2 %"));
-        pieEntries.add(new PieEntry(p3, "Type 3 %"));
+        pieEntries.add(new PieEntry(p1,"Food %"));
+        pieEntries.add(new PieEntry(p2, "Study %"));
+        pieEntries.add(new PieEntry(p3, "Travel %"));
 
         PieDataSet pieDataSet = new PieDataSet(pieEntries,"Budget");
         pieDataSet.setColors(ColorTemplate.COLORFUL_COLORS);
