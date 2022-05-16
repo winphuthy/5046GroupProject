@@ -61,7 +61,19 @@
                 android:layout_marginBottom="22dp"
                 android:layout_marginTop="-1dp"
                 android:layout_below="@+id/ViewTitle" />
-        
+
+        <ImageView
+                android:id="@+id/view_item_delete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="8dp"
+                android:src="@android:drawable/ic_menu_close_clear_cancel"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="2dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="25dp" />
+
     </RelativeLayout>
 
 </androidx.cardview.widget.CardView>

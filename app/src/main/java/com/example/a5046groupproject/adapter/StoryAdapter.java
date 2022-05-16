@@ -3,6 +3,8 @@ package com.example.a5046groupproject.adapter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -10,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.a5046groupproject.R;
 import com.example.a5046groupproject.entity.Story;
+import com.example.a5046groupproject.repository.StoryRepository;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,6 +40,10 @@ public class StoryAdapter extends RecyclerView.Adapter<StoryAdapter.Holder>{
         holder.textViewType.setText(currentStory.getConsumeType());
         holder.textViewPrice.setText(String.valueOf(currentStory.getPrice()));
         holder.textViewTime.setText(currentStory.getStoryTime());
+        holder.viewDelete.setOnClickListener(view -> {
+            stories.remove(currentStory);
+            notifyDataSetChanged();
+        });
     }
 
     @Override
@@ -55,6 +62,7 @@ public class StoryAdapter extends RecyclerView.Adapter<StoryAdapter.Holder>{
         private TextView textViewType;
         private TextView textViewPrice;
         private TextView textViewTime;
+        private ImageView viewDelete;
 
         public Holder(View itemView){
             super(itemView);
@@ -63,6 +71,7 @@ public class StoryAdapter extends RecyclerView.Adapter<StoryAdapter.Holder>{
             textViewType = itemView.findViewById(R.id.ViewType);
             textViewPrice = itemView.findViewById(R.id.ViewPrice);
             textViewTime = itemView.findViewById(R.id.ViewTime);
+            viewDelete = itemView.findViewById(R.id.view_item_delete);
         }
     }
 }
