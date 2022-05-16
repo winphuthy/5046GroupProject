@@ -4,9 +4,11 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.home.HomeFragment">
+        tools:context=".ui.home.HomeFragment"
+        android:stretchColumns="1">
 
-    <ImageView
+
+<ImageView
             android:id="@+id/imageView"
             android:layout_width="342dp"
             android:layout_height="229dp"
@@ -29,5 +31,42 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintHorizontal_bias="0.483"
             app:layout_constraintVertical_bias="0.716" />
+    <TableLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        >
+        <TableRow
+            android:layout_marginTop="70dp"
+            >
+            <TextView
+                android:layout_column="1"
+                android:text="AUD"
+                android:padding="4dp"
+                android:textStyle="bold"
+                ></TextView>
+            <TextView
+                android:text="/"
+                ></TextView>
+            <TextView
+                android:text="USD"
+                android:padding="4dp"
+                android:textStyle="bold"
+                ></TextView>
+            <TextView
+                android:text="="
+                ></TextView>
+            <TextView
+                android:id="@+id/CurrencyRate1"
+                android:text="Row 1 P3"
+                android:padding="4dp"
+                ></TextView>
+        </TableRow>
+
+    </TableLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

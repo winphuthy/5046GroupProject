@@ -123,11 +123,11 @@ public class BarActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
             if(day.after(afterDate)&&day.before(beforeDate)){
-                if(result.get(i).getConsumeType().equals("type1")){
+                if(result.get(i).getConsumeType().equals("Food")){
                     priceType1+=result.get(i).getPrice();
-                }else if(result.get(i).getConsumeType().equals("type2")){
+                }else if(result.get(i).getConsumeType().equals("Study")){
                     priceType2+=result.get(i).getPrice();
-                }else if(result.get(i).getConsumeType().equals("type3")){
+                }else if(result.get(i).getConsumeType().equals("Travel")){
                     priceType3+=result.get(i).getPrice();
                 }
             }
@@ -149,7 +149,7 @@ public class BarActivity extends AppCompatActivity {
         BarDataSet barDataSet = new BarDataSet(barEntries, "Budget");
         barDataSet.setColors(ColorTemplate.COLORFUL_COLORS);
 
-        List<String> xAxisValues = new ArrayList<>(Arrays.asList("Type1 %","Type2 %","Type3 %"));
+        List<String> xAxisValues = new ArrayList<>(Arrays.asList("Food %","Study %","Travel %"));
         binding.barChart.getXAxis().setValueFormatter(new
                 com.github.mikephil.charting.formatter.IndexAxisValueFormatter(xAxisValues));
 
