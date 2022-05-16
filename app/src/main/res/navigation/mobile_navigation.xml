@@ -35,7 +35,7 @@
             android:label="SettingsFragment" />
     <activity
             android:id="@+id/nav_cost"
-            android:name="com.example.a5046groupproject.storyList_Activity"
+            android:name="com.example.a5046groupproject.StoryList_Activity"
             android:label="activity_story_list"
             tools:layout="@layout/activity_story_list" />
 </navigation>

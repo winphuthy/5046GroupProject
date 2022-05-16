@@ -1,5 +1,7 @@
 package com.example.a5046groupproject.entity;
 
+import androidx.annotation.NonNull;
+
 public class User {
     private String uid;
     private String email;
@@ -43,5 +45,14 @@ public class User {
 
     public void setDescription(String description){
         this.description = description;
+    }
+
+    @NonNull
+    @Override
+    public String toString(){
+        return super.toString() + "Uid: " + uid + "\n"
+                + "Email: " + email + "\n"
+                + "name: " + name + "\n"
+                + "description: " + description + "\n";
     }
 }

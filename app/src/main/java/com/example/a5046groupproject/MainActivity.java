@@ -35,13 +35,13 @@ public class MainActivity extends AppCompatActivity{
         setContentView(binding.getRoot());
 
         setSupportActionBar(binding.appBarMain3.toolbar);
-        binding.appBarMain3.fab.setOnClickListener(new View.OnClickListener(){
+        /*binding.appBarMain3.fab.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
-        });
+        });*/
         DrawerLayout drawer = binding.drawerLayout;
         NavigationView navigationView = binding.navView;
         

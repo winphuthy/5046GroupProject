@@ -26,7 +26,7 @@
                 android:name=".RoomActivity"
                 android:exported="false" />
         <activity
-                android:name=".storyList_Activity"
+                android:name=".StoryList_Activity"
                 android:exported="false" />
         <activity
                 android:name=".BarActivity"
