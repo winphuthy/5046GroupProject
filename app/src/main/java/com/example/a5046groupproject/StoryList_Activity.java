@@ -17,11 +17,15 @@ import android.os.Bundle;
 import android.service.quicksettings.Tile;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.Spinner;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 import com.example.a5046groupproject.adapter.StoryAdapter;
 import com.example.a5046groupproject.databinding.ActivityStoryListBinding;
@@ -37,7 +41,7 @@ import java.util.Calendar;
 import java.util.List;
 import java.util.Locale;
 
-public class StoryList_Activity extends AppCompatActivity{
+public class StoryList_Activity extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
     private static final String TAG = "storyList_Activity: ";
     private StoryViewModel storyViewModel;
     private ActivityStoryListBinding binding;
@@ -49,6 +53,7 @@ public class StoryList_Activity extends AppCompatActivity{
     private Button timePickerBtn;
     private StoryRepository sr;
     DatePickerDialog.OnDateSetListener setListener;
+    private String spinnerSelect;
 
 
     @Override
@@ -104,12 +109,19 @@ public class StoryList_Activity extends AppCompatActivity{
 
 
         EditText title = (EditText) contactPopup.findViewById(R.id.story_title);
-        EditText type = (EditText) contactPopup.findViewById(R.id.story_type);
+        Spinner type = (Spinner) contactPopup.findViewById(R.id.story_type);
         EditText price = (EditText) contactPopup.findViewById(R.id.story_price);
         timePickerBtn = (Button) contactPopup.findViewById(R.id.story_time);
         EditText detail = (EditText) contactPopup.findViewById(R.id.story_detail);
         Button saveBtn = (Button) contactPopup.findViewById(R.id.story_saveBtn);
         Button clearBtn = (Button) contactPopup.findViewById(R.id.story_clearBtn);
+
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+                R.array.consuming_types,
+                androidx.appcompat.R.layout.support_simple_spinner_dropdown_item);
+        adapter.setDropDownViewResource(androidx.appcompat.R.layout.support_simple_spinner_dropdown_item);
+        type.setAdapter(adapter);
+        type.setOnItemSelectedListener(this);
 
         Calendar calendar = Calendar.getInstance();
         int year = calendar.get(Calendar.YEAR);
@@ -123,23 +135,23 @@ public class StoryList_Activity extends AppCompatActivity{
 
         saveBtn.setOnClickListener(view -> {
             String input_title = title.getText().toString();
-            String input_type = type.getText().toString();
+            String input_type = spinnerSelect;
             float input_price = Float.valueOf(price.getText().toString());
             String input_time = timePickerBtn.getText().toString();
             String input_detail = detail.getText().toString();
-            String ownerid = mAuth.getCurrentUser().getUid();
+            String ownerID = mAuth.getCurrentUser().getUid();
             if (!(input_detail.isEmpty() || input_type.isEmpty() || input_time.isEmpty() || input_title.isEmpty())) {
-                sr.insert(new Story(ownerid, input_title, input_detail, input_type, input_price, input_time));
+                sr.insert(new Story(ownerID, input_title, input_detail, input_type, input_price, input_time));
+                Toast.makeText(this, "All label should not be empty", Toast.LENGTH_SHORT).show();
                 Log.d(TAG, "createNewDialogue: SAVE");
-                dialog.dismiss();
             }
+            dialog.dismiss();
         });
 
         clearBtn.setOnClickListener(view -> {
             title.setText("");
             price.setText("");
             detail.setText("");
-            type.setText("");
             timePickerBtn.setText("");
         });
 
@@ -158,6 +170,18 @@ public class StoryList_Activity extends AppCompatActivity{
                 timePickerBtn.setText(data);
             }
         };
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l){
+        spinnerSelect = adapterView.getItemAtPosition(position).toString();
+        Toast.makeText(adapterView.getContext(), spinnerSelect, Toast.LENGTH_SHORT).show();
+        
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> adapterView){
+
     }
 
 /*    public void popTimePicker(View view){
