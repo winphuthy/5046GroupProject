@@ -88,7 +88,7 @@ public class StoryList_Activity extends AppCompatActivity implements AdapterView
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        adapter = new StoryAdapter(sr.getStoryFromCustomerInList(mAuth.getUid()));
+        adapter = new StoryAdapter(sr.getStoryFromCustomerInList(mAuth.getUid()), sr);
         recyclerView.setAdapter(adapter);
 
         storyViewModel = ViewModelProvider.AndroidViewModelFactory.getInstance(getApplication()).create(StoryViewModel.class);
@@ -140,12 +140,14 @@ public class StoryList_Activity extends AppCompatActivity implements AdapterView
             String input_time = timePickerBtn.getText().toString();
             String input_detail = detail.getText().toString();
             String ownerID = mAuth.getCurrentUser().getUid();
-            if (!(input_detail.isEmpty() || input_type.isEmpty() || input_time.isEmpty() || input_title.isEmpty())) {
-                sr.insert(new Story(ownerID, input_title, input_detail, input_type, input_price, input_time));
+            if (input_type.isEmpty() || input_time.isEmpty() || input_title.isEmpty()) {
                 Toast.makeText(this, "All label should not be empty", Toast.LENGTH_SHORT).show();
-                Log.d(TAG, "createNewDialogue: SAVE");
             }
-            dialog.dismiss();
+            else{
+                sr.insert(new Story(ownerID, input_title, input_detail, input_type, input_price, input_time));
+                Log.d(TAG, "createNewDialogue: SAVE");
+                dialog.dismiss();
+            }
         });
 
         clearBtn.setOnClickListener(view -> {
@@ -166,7 +168,7 @@ public class StoryList_Activity extends AppCompatActivity implements AdapterView
             @Override
             public void onDateSet(DatePicker datePicker, int year, int month, int dayOfMonth){
                 month = month + 1;
-                String data = day + "/" + month + "/" + year;
+                String data = dayOfMonth + "/" + month + "/" + year;
                 timePickerBtn.setText(data);
             }
         };
@@ -176,7 +178,6 @@ public class StoryList_Activity extends AppCompatActivity implements AdapterView
     public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l){
         spinnerSelect = adapterView.getItemAtPosition(position).toString();
         Toast.makeText(adapterView.getContext(), spinnerSelect, Toast.LENGTH_SHORT).show();
-        
     }
 
     @Override

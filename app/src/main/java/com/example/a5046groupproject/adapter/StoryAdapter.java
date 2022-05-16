@@ -19,9 +19,11 @@ import java.util.List;
 
 public class StoryAdapter extends RecyclerView.Adapter<StoryAdapter.Holder>{
     private List<Story> stories;
+    private StoryRepository sr;
 
-    public StoryAdapter(List<Story> stories){
+    public StoryAdapter(List<Story> stories, StoryRepository sr){
         this.stories = stories;
+        this.sr = sr;
     }
 
     @NonNull
@@ -42,6 +44,7 @@ public class StoryAdapter extends RecyclerView.Adapter<StoryAdapter.Holder>{
         holder.textViewTime.setText(currentStory.getStoryTime());
         holder.viewDelete.setOnClickListener(view -> {
             stories.remove(currentStory);
+            sr.delete(currentStory);
             notifyDataSetChanged();
         });
     }

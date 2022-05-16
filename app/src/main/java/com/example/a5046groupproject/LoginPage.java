@@ -45,7 +45,7 @@ public class LoginPage extends AppCompatActivity{
 
 //        StoryRepository re =new StoryRepository(getApplication());
 //        list<Story> list = re.getStoryFromCustomerInList(mAuth.getUid());
-        
+
         // building a google sign in option used by google sign in
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.default_web_client_id))
@@ -61,14 +61,14 @@ public class LoginPage extends AppCompatActivity{
             startActivityForResult(intent, RC_SIGN_IN);
         });
 
-        binding.rvlogin.setOnClickListener(view -> {
+        /*binding.rvlogin.setOnClickListener(view -> {
             startActivity(new Intent(this, StoryList_Activity.class));
-        });
+        });*/
 
         binding.loginBtn.setOnClickListener(view -> {
             userLogin();
         });
-        
+
 //        binding.menu.setOnClickListener(view -> {
 //            startActivity(new Intent(this, MainActivity.class));
 //        });
