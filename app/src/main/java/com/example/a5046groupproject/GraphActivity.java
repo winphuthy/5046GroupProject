@@ -139,11 +139,9 @@ public class GraphActivity extends AppCompatActivity {
         }
 
         float p1 =0f, p2 =0f, p3 =0f;
-
-        p1 = ((priceType1)/(priceType1+priceType2+priceType3))*100f;
-        p2 = ((priceType2)/(priceType1+priceType2+priceType3))*100f;
-        p3 = ((priceType3)/(priceType1+priceType2+priceType3))*100f;
-
+        p1 = percent(priceType1,priceType2,priceType3);
+        p2 = percent(priceType2,priceType1,priceType3);
+        p3 = percent(priceType3,priceType1,priceType2);
 
         List<PieEntry> pieEntries = new ArrayList<>();
         pieEntries.add(new PieEntry(p1,"Type 1 %"));
@@ -159,5 +157,8 @@ public class GraphActivity extends AppCompatActivity {
         binding.barChart.setUsePercentValues(true);
         binding.barChart.setCenterText("Budget Percentage PieChart");
         binding.barChart.invalidate();
+    }
+    public float percent(float a, float b, float c){
+        return (a/(a+b+c))*100f;
     }
 }
